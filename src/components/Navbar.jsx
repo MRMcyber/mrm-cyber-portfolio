@@ -23,7 +23,7 @@ const Navbar = ({ toggleTerminal, terminalOpen }) => {
                 {isMenuOpen ? '[X]' : '[=]'}
             </button>
 
-            <ul className={`nav - links ${isMenuOpen ? 'active' : ''} `}>
+            <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
                 {navItems.map((item) => (
                     <li key={item.id}
                         onMouseEnter={() => setIsHovered(item.id)}
