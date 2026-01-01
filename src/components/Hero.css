@@ -286,6 +286,10 @@
     }
 
     .hero-visuals {
-        display: none;
+        display: flex;
+        height: 300px;
+        transform: scale(0.6);
+        margin-top: -2rem;
+        margin-bottom: 2rem;
     }
 }

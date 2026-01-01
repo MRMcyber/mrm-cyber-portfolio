@@ -11,6 +11,22 @@
     margin: 0 auto;
 }
 
+@media (max-width: 600px) {
+    .terminal-form {
+        padding: 1.5rem;
+    }
+
+    .form-line {
+        font-size: 0.75rem;
+        /* Smaller terminal text */
+    }
+
+    .input-group input,
+    .input-group textarea {
+        font-size: 0.9rem;
+    }
+}
+
 /* Terminal Form Container */
 .terminal-form-container {
     background: rgba(10, 10, 10, 0.95);
