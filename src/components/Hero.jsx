@@ -53,8 +53,14 @@ const Hero = () => {
             </div>
 
             <div className="hero-visuals">
-                <div className="cyber-circle">
-                    <div className="circle-inner"></div>
+                <div className="hologram-container">
+                    <div className="gyroscope">
+                        <div className="ring ring-1"></div>
+                        <div className="ring ring-2"></div>
+                        <div className="ring ring-3"></div>
+                        <div className="core"></div>
+                    </div>
+                    <div className="holo-base"></div>
                 </div>
             </div>
         </section>

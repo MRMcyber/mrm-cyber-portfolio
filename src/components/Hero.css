@@ -100,67 +100,163 @@
     animation: blink 1s infinite;
 }
 
-/* Visuals */
+/* Visuals - Holographic Gyroscope */
 .hero-visuals {
     flex: 1;
     display: flex;
     justify-content: center;
+    align-items: center;
     position: relative;
-    pointer-events: none;
-}
-
-.cyber-circle {
-    width: 400px;
+    perspective: 1000px;
     height: 400px;
-    border: 2px solid var(--color-dim);
-    border-radius: 50%;
+}
+
+.hologram-container {
     position: relative;
-    animation: rotate 20s linear infinite;
+    transform-style: preserve-3d;
 }
 
-.cyber-circle::before {
-    content: '';
-    position: absolute;
-    top: -5px;
-    left: 50%;
-    width: 10px;
-    height: 10px;
-    background: var(--color-accent);
-    box-shadow: 0 0 10px var(--color-accent);
-    transform: translateX(-50%);
+.gyroscope {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    animation: floating 4s ease-in-out infinite;
 }
 
-.cyber-circle::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    width: 10px;
-    height: 10px;
-    background: var(--color-primary);
-    box-shadow: 0 0 10px var(--color-primary);
-    transform: translateX(-50%);
-}
-
-.circle-inner {
+.ring {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 300px;
-    height: 300px;
-    border: 1px dashed var(--color-primary);
+    border: 2px solid var(--color-primary);
     border-radius: 50%;
-    animation: rotate 10s linear infinite reverse;
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
+    transform-style: preserve-3d;
 }
 
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
+.ring-1 {
+    width: 100%;
+    height: 100%;
+    border-color: rgba(0, 255, 65, 0.5);
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+    animation: spin3D 10s linear infinite;
+}
+
+.ring-2 {
+    width: 80%;
+    height: 80%;
+    border-color: rgba(0, 184, 255, 0.6);
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    animation: spin3DInv 8s linear infinite;
+}
+
+.ring-3 {
+    width: 60%;
+    height: 60%;
+    border-color: rgba(255, 95, 86, 0.6);
+    border-style: dashed;
+    animation: spinHorizontal 6s linear infinite;
+}
+
+.core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    box-shadow: 0 0 40px var(--color-primary), 0 0 80px var(--color-primary);
+    animation: pulseCore 2s ease-in-out infinite;
+}
+
+/* Holographic Base */
+.holo-base {
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%) rotateX(70deg);
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(0, 255, 65, 0.2) 0%, transparent 70%);
+    border: 1px solid rgba(0, 255, 65, 0.1);
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);
+    animation: scanBase 3s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes spin3D {
+    0% {
+        transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
     }
 
-    to {
-        transform: rotate(360deg);
+    100% {
+        transform: translate(-50%, -50%) rotateX(360deg) rotateY(180deg) rotateZ(360deg);
+    }
+}
+
+@keyframes spin3DInv {
+    0% {
+        transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotateX(-360deg) rotateY(-180deg) rotateZ(-90deg);
+    }
+}
+
+@keyframes spinHorizontal {
+    0% {
+        transform: translate(-50%, -50%) rotateX(60deg) rotateZ(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotateX(60deg) rotateZ(360deg);
+    }
+}
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes pulseCore {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 1;
+    }
+}
+
+@keyframes scanBase {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: translateX(-50%) rotateX(70deg) scale(1);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: translateX(-50%) rotateX(70deg) scale(1.1);
     }
 }
 
