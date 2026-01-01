@@ -22,11 +22,15 @@ const SkillsGraph = () => {
     useEffect(() => {
         const canvas = canvasRef.current;
         const ctx = canvas.getContext('2d');
-        let width = canvas.width = 500;
-        let height = canvas.height = 500;
+
+        // Responsive capability
+        const isMobile = window.innerWidth < 768;
+        let width = canvas.width = isMobile ? 300 : 500;
+        let height = canvas.height = isMobile ? 300 : 500;
+
         const centerX = width / 2;
         const centerY = height / 2;
-        const radius = 150;
+        const radius = isMobile ? 90 : 150;
 
         const drawGraph = () => {
             ctx.clearRect(0, 0, width, height);

@@ -3,6 +3,7 @@ import './Navbar.css'; // We'll create this specific CSS
 
 const Navbar = ({ toggleTerminal, terminalOpen }) => {
     const [isHovered, setIsHovered] = useState(null);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const navItems = [
         { id: 'home', label: 'Home //', path: '#' },
@@ -18,11 +19,16 @@ const Navbar = ({ toggleTerminal, terminalOpen }) => {
                 MRM_CYBER
             </div>
 
-            <ul className="nav-links">
+            <button className="mobile-menu-btn" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                {isMenuOpen ? '[X]' : '[=]'}
+            </button>
+
+            <ul className={`nav - links ${isMenuOpen ? 'active' : ''} `}>
                 {navItems.map((item) => (
                     <li key={item.id}
                         onMouseEnter={() => setIsHovered(item.id)}
                         onMouseLeave={() => setIsHovered(null)}
+                        onClick={() => setIsMenuOpen(false)}
                     >
                         <a href={item.path}>
                             <span className="bracket">[</span>

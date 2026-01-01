@@ -110,4 +110,8 @@
         flex-direction: column;
         text-align: center;
     }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
 }

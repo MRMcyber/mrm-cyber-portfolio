@@ -78,14 +78,58 @@
     }
 }
 
+
+.mobile-menu-btn {
+    display: none;
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-mono);
+}
+
 .terminal-toggle {
     font-size: 0.8rem;
     padding: 0.4rem 1rem;
 }
 
 @media (max-width: 768px) {
-    .nav-links {
+    .mobile-menu-btn {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        z-index: 102;
+    }
+
+    .terminal-toggle {
         display: none;
-        /* Mobile menu to be added if needed, or stick to burger */
+        /* Hide interactive terminal button on mobile to save space */
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(10, 10, 10, 0.98);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 101;
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+    }
+
+    .nav-links a {
+        font-size: 1.5rem;
     }
 }

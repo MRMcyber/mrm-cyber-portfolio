@@ -169,13 +169,27 @@
         flex-direction: column;
         justify-content: center;
         text-align: center;
+        padding-top: 100px;
+        /* More space for navbar */
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        /* Drastically reduced from 5rem */
+    }
+
+    .typing-text {
+        font-size: 1rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        /* Stack buttons */
+        gap: 1rem;
+        padding: 0 2rem;
     }
 
     .hero-visuals {
         display: none;
-    }
-
-    .hero-actions {
-        justify-content: center;
     }
 }
