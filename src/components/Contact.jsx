@@ -92,15 +92,15 @@ const Contact = () => {
                     <div className="info-card">
                         <h3>DIRECT_UPLINKS</h3>
                         <div className="uplink-list">
-                            <a href="#" className="uplink-item">
+                            <a href="https://linkedin.com/in/MRM_Cyber" target="_blank" rel="noopener noreferrer" className="uplink-item">
                                 <span className="icon">LINKEDIN</span>
                                 <span className="value">/in/MRM_Cyber</span>
                             </a>
-                            <a href="#" className="uplink-item">
+                            <a href="https://github.com/MRMCyber" target="_blank" rel="noopener noreferrer" className="uplink-item">
                                 <span className="icon">GITHUB</span>
                                 <span className="value">/MRMCyber</span>
                             </a>
-                            <a href="#" className="uplink-item">
+                            <a href="https://x.com/MRM_Cyber" target="_blank" rel="noopener noreferrer" className="uplink-item">
                                 <span className="icon">X_CORP</span>
                                 <span className="value">@MRM_Cyber</span>
                             </a>
