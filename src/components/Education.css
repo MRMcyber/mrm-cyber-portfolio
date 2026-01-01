@@ -1,0 +1,127 @@
+.education-section {
+    padding: 4rem 20px;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: #333;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+}
+
+.timeline-item.left {
+    left: 0;
+}
+
+.timeline-item.right {
+    left: 50%;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    right: -8px;
+    background: var(--color-bg);
+    border: 2px solid var(--color-primary);
+    top: 20px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item.right::after {
+    left: -8px;
+}
+
+.timeline-content {
+    padding: 20px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    position: relative;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.timeline-content:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.1);
+}
+
+.date-badge {
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    background: var(--color-primary);
+    color: var(--color-bg);
+    padding: 5px 10px;
+    font-weight: bold;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+}
+
+.timeline-content h3 {
+    margin-top: 10px;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.issuer {
+    color: #888;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.skills-tags {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-pill {
+    font-size: 0.75rem;
+    background: #222;
+    padding: 2px 8px;
+    border: 1px solid #444;
+    color: #aaa;
+}
+
+@media (max-width: 768px) {
+    .timeline::after {
+        left: 31px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .timeline-item::after {
+        /* The dot */
+        left: 23px;
+    }
+
+    .timeline-item.right {
+        left: 0;
+    }
+}

@@ -1,0 +1,91 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background: rgba(13, 13, 13, 0.8);
+    backdrop-filter: blur(5px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    border-bottom: 1px solid rgba(0, 255, 65, 0.2);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: var(--font-mono);
+    color: var(--color-primary);
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    color: var(--color-text);
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.nav-links a .bracket {
+    color: var(--color-dim);
+    transition: color 0.3s;
+}
+
+.nav-links a:hover .bracket {
+    color: var(--color-primary);
+}
+
+.nav-scanline {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--color-primary);
+    box-shadow: 0 0 5px var(--color-primary);
+    animation: scanline 1s infinite linear;
+}
+
+@keyframes scanline {
+    0% {
+        transform: scaleX(0);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scaleX(0);
+        opacity: 0.5;
+    }
+}
+
+.terminal-toggle {
+    font-size: 0.8rem;
+    padding: 0.4rem 1rem;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        /* Mobile menu to be added if needed, or stick to burger */
+    }
+}
